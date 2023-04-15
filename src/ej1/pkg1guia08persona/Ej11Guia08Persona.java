@@ -36,6 +36,7 @@ public class Ej11Guia08Persona {
             imcVec[i] = ps.calcularIMC(perVec[i].peso,perVec[i].altura);
                
         }
+        promedio(mayorVec,imcVec);
         mostrarVectores(perVec,imcVec,mayorVec);
         
     }
@@ -59,7 +60,17 @@ public class Ej11Guia08Persona {
             System.out.print(" "+imcVec[i]+" ");
             
         }
-    }    
+    }
+    
+    public static void promedio(int[] mayor,int[] imc){
+        double contMay=0;
+        double contImc=0;
+        
+        for (int i = 0; i < 4; i++) {
+            
+            
+        }
+    }
     
     
     
