@@ -36,6 +36,8 @@ public class Ej11Guia08Persona {
             imcVec[i] = ps.calcularIMC(perVec[i].peso,perVec[i].altura);
                
         }
+        System.out.println("");
+        System.out.println("PROMEDIOS");
         promedio(mayorVec,imcVec);
         mostrarVectores(perVec,imcVec,mayorVec);
         
@@ -57,19 +59,41 @@ public class Ej11Guia08Persona {
         System.out.println("");    
         System.out.println("MAYOR");
         for (int i = 0; i < 4; i++) {
-            System.out.print(" "+imcVec[i]+" ");
+            System.out.print(" "+mayorVec[i]+" ");
             
         }
+        System.out.println("");
     }
     
     public static void promedio(int[] mayor,int[] imc){
-        double contMay=0;
-        double contImc=0;
-        
+        double contMay1=0;
+        double contMay0=0;
+        double contImcM1=0;
+        double contImc1=0;
+        double contImc0=0;
         for (int i = 0; i < 4; i++) {
+            if ((mayor[i]==0)) {
+                contMay0++;
+                
+            }else{
+                contMay1++;
+            }
             
-            
+            if (imc[i]==-1) {
+                contImcM1++;
+                
+            }else if (imc[i]==0){
+                contImc0++;
+                
+            }else{
+                contImc1++;
+            }
         }
+        System.out.println("Personas mayores: "+((contMay1/4)*100+"%"));
+        System.out.println("Personas menores: "+((contMay0/4)*100+"%"));
+        System.out.println("Personas con bajo peso: "+((contImcM1/4)*100+"%"));
+        System.out.println("Personas peso ideal: "+((contImc0/4)*100+"%"));
+        System.out.println("Personas sobrepeso: "+((contImc1/4)*100+"%"));
     }
     
     
